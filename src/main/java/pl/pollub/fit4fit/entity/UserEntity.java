@@ -26,6 +26,5 @@ public class UserEntity {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "email")
-    private String email;
+
 }

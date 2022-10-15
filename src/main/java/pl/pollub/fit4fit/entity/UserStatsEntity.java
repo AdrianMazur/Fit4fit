@@ -2,10 +2,7 @@ package pl.pollub.fit4fit.entity;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity(name="userStats")
 @Table
@@ -23,4 +20,8 @@ public class UserStatsEntity {
 
     @Column(name = "fat_procentage")
     private float fatProcentage;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_Id", referencedColumnName = "id")
+    private Long userId;
 }
